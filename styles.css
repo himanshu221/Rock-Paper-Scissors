@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* The box-sizing property allows us to include the padding and border in an element's total width and height. */
+    font-family: "Poppins", sans-serif;
+}
+
+.result_images img{
+    width: 100px;
+}
+
+body {
+    height: 100vh;
+    /* Relative to 1% of the height of the viewport
+    * Viewport = the browser window size. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    background-color: aliceblue;
+}
+.score_container {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 3rem;
+    align-items: center; 
+    padding: 1rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.score_container p {
+    font-size: 2rem;
+    color: #7d2ae8;
+    flex: 1 1 0px;
+}
+.result_images {
+    display: flex;
+    justify-content: center; 
+    column-gap: 15rem;
+}
+.container {
+    padding: 2rem 9rem;
+    border-radius: 14px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+}
+
+.container.start .user_image {
+    animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+    50% {
+        transform-origin: left;
+        transform: rotate(15deg);
+    }
+}
+
+.container.start .computer_image {
+    animation: compShake 0.7s ease infinite;
+}
+
+@keyframes compShake {
+    50% {
+        transform-origin: right;
+        transform: rotate(-15deg);
+    }
+}
+.user_image img {
+    transform: rotate(90deg) ;
+}
+
+.computer_image img {
+    transform: rotate(-90deg) rotateY(180deg) ;
+}
+
+.result p {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #7d2ae8;
+    margin-top: 2rem;
+}
+
+.option_images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+.container.start .option_image{
+    pointer-events: none;
+}
+
+.option_image:hover {
+    opacity:1;
+    
+}
+.option_images img {
+    width: 50px;
+}
+
+.option_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.option_image.active {
+    opacity: 1;
+}
+
+.option_image p {
+    font-size: 1rem;
+    color: #7d2ae8;
+    margin-top: 1rem;
+}
